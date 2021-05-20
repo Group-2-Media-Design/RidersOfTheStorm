@@ -4,6 +4,28 @@
     box-sizing: border-box;
 }
 
+.navbar-container {
+    width: 100%;
+    background-color: purple;
+    min-height: 90px;
+}
+
+.navbar-wrapper {
+    padding: 10px;
+    width: 90%;
+    min-height: inherit;
+    background-color: purple;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
 body {
     background-color: black;
 }
@@ -14,41 +36,44 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     transition: all .5s ease-in-out;
-    border: 3px #fff solid;
 }
 
 .menu-btn_burger {
-    width: 50px;
-    height: 6px;
+    width: 30px;
+    height: 3px;
     background: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
     transition: all .5s ease-in-out;
     transform: translateY(3px);
+    box-shadow: 3px 1px 16px 1px #000000;
 }
 
 .menu-btn_burger_2 {
-    width: 35px;
-    height: 6px;
+    width: 20px;
+    height: 3px;
     background: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
     transition: all .5s ease-in-out;
     transform: translateX(5.9px);
+    box-shadow: 3px 1px 16px 1px #000000;
 }
 
 .menu-btn_burger_3 {
-    width: 25px;
-    height: 6px;
+    width: 10px;
+    height: 3px;
     background: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
     transition: all .5s ease-in-out;
-    transform: translate(10px, -3px)
+    transform: translate(10.5px, -3px);
+    box-shadow: 3px 1px 16px 1px #000000;
+
 }
 
 
@@ -83,12 +108,12 @@ body {
 }
 
 .menu-btn.open .menu-btn_burger {
-    transform: rotate(45deg) translate(14.5px, 14.5px);
-    width: 50px;
+    transform: rotate(45deg) translate(8px, 10.3px);
+    width: 20px;
 }
 
 .menu-btn.open .menu-btn_burger_3 {
-    transform: rotate(-45deg) translate(14px, -14px);
-    width: 50px;
+    transform: rotate(-45deg) translate(8px, -11.5px);
+    width: 20px;
     box-shadow: none;
-} 
+}  
