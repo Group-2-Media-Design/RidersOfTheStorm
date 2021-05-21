@@ -21,6 +21,15 @@
     align-items: center;
 }
 
+.links {
+    width: 90%;
+    margin: auto;
+}
+
+.links a {
+    padding-left: 30px;
+}
+
 .logo {
     width: 50px;
     height: 50px;
@@ -40,6 +49,7 @@ body {
     height: 50px;
     cursor: pointer;
     transition: all .5s ease-in-out;
+    display: none;
 }
 
 .menu-btn_burger {
@@ -102,7 +112,7 @@ body {
 
 /* ANIMATION */
 .menu-btn.open .menu-btn_burger_2 {
-    transform: translateX(-50px);
+    transform: translateX(-30px);
     background: transparent;
     box-shadow: none;
 }
