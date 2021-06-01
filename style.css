@@ -206,10 +206,10 @@ footer h1 {
 
 }
 
-/* BUILDINGS SECTION - SECTION */
+/* BUILDINGS LIST SECTION - START */
 .building-selection-container {
     width: 100%;
-    min-height: 100px;
+    min-height: 80px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -242,21 +242,53 @@ footer h1 {
     border: 1px #ACADBC solid;
     border-radius: 10px;
     color: #663366;
+    cursor: pointer;
 }
 
 .building-list-2 {
     padding: 5px 15px 5px 15px;
+    cursor: pointer;
 }
 
 .building-list-3 {
     padding: 5px 15px 5px 15px;
+    cursor: pointer;
 }
 
 .building-list-4 {
     padding: 5px 15px 5px 15px;
+    cursor: pointer;
 }
 
 .reservetionText {
     color: #663366;
     font-weight: bold;
+    width: 18%;
 }
+/* BUILDINGS LIST SECTION - END */
+
+/* BUILDINGS/METHOD IMAGES SECTION - START */
+.building_method_images-container {
+    width: 100%;
+    min-height: 200px;
+}
+
+.building_method_images-wraper {
+    width: 90%;
+    margin: auto;
+}
+
+.building-images {
+    width: 60%;
+    height: auto;
+}
+
+.building-images img {
+    width: 100%;
+    height: inherit;
+    border-radius: 15px;
+    box-shadow: 5px 1px 16px 4px rgba(0,0,0,0.54);
+}
+
+
+/* BUILDINGS/METHOD IMAGES SECTION - END */
