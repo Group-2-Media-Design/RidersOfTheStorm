@@ -1,9 +1,16 @@
+/* GLOBAL PROPERTIES - START */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+body {
+    background-color: #fff;
+}
+/* GLOBAL PROPERTIES - END */
+
+/* NAVBAR - STARAT */
 .navbar-container {
     width: 100%;
     background-color: purple;
@@ -53,9 +60,7 @@
     height: 50px;
 }
 
-body {
-    background-color: white;
-}
+
 
 .menu-btn {
     position: relative;
@@ -104,7 +109,7 @@ body {
 }
 
 
-/* ANIMATION */
+/* ANIMATIONS FOR THE BURGER MENU - START */
 .menu-btn_burger-active {
     transform: rotate(45deg) translate(8px, 10.3px);
     width: 20px;
@@ -121,8 +126,11 @@ body {
     background: transparent;
     box-shadow: none;
 }
+/* ANIMATIONS FOR THE BURGER MENU - END */
 
-/* FOOTER */
+/* NAVBAR - END */
+
+/* FOOTER - START */
 footer {
     position: fixed;
     bottom: 0;
@@ -140,13 +148,13 @@ footer h1 {
     color: #fff;
     font-size: 2rem;
 }
+/* FOOTER - END */
 
 @media screen and (max-width: 1024px) {
     .nav-links {
         width: 100%;
     }
 }
-
 
 @media screen and (max-width: 776px) {
     
@@ -196,4 +204,59 @@ footer h1 {
         transform: translateX(0px);
     }
 
+}
+
+/* BUILDINGS SECTION - SECTION */
+.building-selection-container {
+    width: 100%;
+    min-height: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.building-selection-wrapper {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: inherit;
+}
+
+.building-list {
+    width: 25%;
+}
+
+.building-list ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.building-list ul, li {
+    color: black;
+}
+
+.building-list-1 {
+    background-color: #ACADBC;
+    padding: 5px 10px 5px 10px;
+    border: 1px #ACADBC solid;
+    border-radius: 10px;
+    color: #663366;
+}
+
+.building-list-2 {
+    padding: 5px 15px 5px 15px;
+}
+
+.building-list-3 {
+    padding: 5px 15px 5px 15px;
+}
+
+.building-list-4 {
+    padding: 5px 15px 5px 15px;
+}
+
+.reservetionText {
+    color: #663366;
+    font-weight: bold;
 }
