@@ -1,6 +1,6 @@
-const animations = () => {
+const navAnimation = () => {
 
-    // DEFINIG ALL THE CLASSES
+    // DEFINIG ALL ELEMENTS
     const menuBtn = document.querySelector('.menu-btn');
     const burgerTwo = document.querySelector('.menu-btn_burger_2');
     const burgerThree = document.querySelector('.menu-btn_burger_3');
@@ -29,4 +29,49 @@ const animations = () => {
     });
 }
 
-animations();
+navAnimation();
+
+const buildingsAnimation = () => {
+    // DEFINING ALL ELEMENTS
+    const buildingList_1 = document.querySelector('.building-list-1');
+    const buildingList_2 = document.querySelector('.building-list-2');
+    const buildingList_3 = document.querySelector('.building-list-3');
+    const buildingList_4 = document.querySelector('.building-list-4');
+    const campusOverview = document.getElementById('campus-overview-image');
+
+    // EVENT LISTENERS
+    buildingList_2.addEventListener('click', () => {
+        buildingList_2.classList.add('building-list-2-active');
+        buildingList_1.classList.add('building-list-1-nactive');
+        buildingList_3.classList.remove('building-list-3-active');
+        buildingList_4.classList.remove('building-list-4-active');
+        campusOverview.src = './img/R3.png'
+    });
+
+    buildingList_3.addEventListener('click', () => {
+        buildingList_3.classList.add('building-list-3-active');
+        buildingList_1.classList.add('building-list-1-nactive');
+        buildingList_2.classList.remove('building-list-2-active');
+        buildingList_4.classList.remove('building-list-4-active');
+        campusOverview.src = './img/R1.png';
+    });
+
+    buildingList_4.addEventListener('click', () => {
+        buildingList_4.classList.add('building-list-4-active');
+        buildingList_1.classList.add('building-list-1-nactive');
+        buildingList_3.classList.remove('building-list-3-active');
+        buildingList_2.classList.remove('building-list-2-active');
+        campusOverview.src = './img/R4.png';
+    });
+
+    buildingList_1.addEventListener('click', () => {
+        buildingList_1.classList.remove('building-list-1-nactive');
+        buildingList_4.classList.remove('building-list-4-active');
+        buildingList_3.classList.remove('building-list-3-active');
+        buildingList_2.classList.remove('building-list-2-active');
+        campusOverview.src = './img/R10.png';
+
+    });
+}
+
+buildingsAnimation();
