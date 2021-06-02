@@ -41,7 +41,12 @@ const buildingsAnimation = () => {
 
     // EVENT LISTENERS
     buildingList_2.addEventListener('click', () => {
+        buildingList_1.classList.add('building-list-1-ractive');
+        buildingList_1.classList.remove('building-list-1-rractive');
+        buildingList_4.classList.remove('building-list-4-responsive');
         buildingList_2.classList.add('building-list-2-active');
+        buildingList_2.classList.add('building-list-2-responsive');
+        buildingList_3.classList.remove('building-list-3-responsive');
         buildingList_1.classList.add('building-list-1-nactive');
         buildingList_3.classList.remove('building-list-3-active');
         buildingList_4.classList.remove('building-list-4-active');
@@ -49,7 +54,12 @@ const buildingsAnimation = () => {
     });
 
     buildingList_3.addEventListener('click', () => {
+        buildingList_1.classList.add('building-list-1-ractive');
+        buildingList_1.classList.remove('building-list-1-rractive');
+        buildingList_4.classList.remove('building-list-4-responsive');
+        buildingList_2.classList.remove('building-list-2-responsive');
         buildingList_3.classList.add('building-list-3-active');
+        buildingList_3.classList.add('building-list-3-responsive');
         buildingList_1.classList.add('building-list-1-nactive');
         buildingList_2.classList.remove('building-list-2-active');
         buildingList_4.classList.remove('building-list-4-active');
@@ -57,7 +67,12 @@ const buildingsAnimation = () => {
     });
 
     buildingList_4.addEventListener('click', () => {
+        buildingList_1.classList.add('building-list-1ractive')
+        buildingList_1.classList.remove('building-list-1-rractive');
+        buildingList_2.classList.remove('building-list-2-responsive');
+        buildingList_3.classList.remove('building-list-3-responsive');
         buildingList_4.classList.add('building-list-4-active');
+        buildingList_4.classList.add('building-list-4-responsive');
         buildingList_1.classList.add('building-list-1-nactive');
         buildingList_3.classList.remove('building-list-3-active');
         buildingList_2.classList.remove('building-list-2-active');
@@ -65,6 +80,10 @@ const buildingsAnimation = () => {
     });
 
     buildingList_1.addEventListener('click', () => {
+        buildingList_1.classList.add('building-list-1-rractive');
+        buildingList_3.classList.remove('building-list-3-responsive');
+        buildingList_4.classList.remove('building-list-4-responsive');
+        buildingList_2.classList.remove('building-list-2-responsive');
         buildingList_1.classList.remove('building-list-1-nactive');
         buildingList_4.classList.remove('building-list-4-active');
         buildingList_3.classList.remove('building-list-3-active');

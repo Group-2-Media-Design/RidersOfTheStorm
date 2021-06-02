@@ -150,61 +150,6 @@ footer h1 {
 }
 /* FOOTER - END */
 
-@media screen and (max-width: 1024px) {
-    .nav-links {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 776px) {
-    
-    body {
-        overflow-x: hidden;
-    }
-    
-    .nav-links{
-        position: absolute;
-        width: 100%;
-        right: 0px;
-        height: 83vh;
-        top: 8vh;
-        background-color: purple;
-        display: flex;
-        flex-direction: column;
-        font-size: 24px;
-        align-items: center;
-        justify-content: space-evenly;
-        transform: translateX(100%);
-        transition: transform .6s ease-in;
-    }
-    
-    .nav-links li {
-        opacity: 0;
-    }
-    
-    .menu-btn {
-        display: flex;
-    }
-    
-}
-
-.nav-active {
-    transform: translateX(0%);
-}
-
-
-@keyframes navLinksFade {
-    from {
-        opacity: 0;
-        transform: translateX(25px);
-    }
-    
-    to {
-        opacity: 1;
-        transform: translateX(0px);
-    }
-
-}
 
 /* BUILDINGS LIST SECTION - START */
 .building-selection-container {
@@ -347,11 +292,10 @@ footer h1 {
 
 .building-images {
     width: 60%;
-    height: auto;
+    height: inherit;
 }
 
 .building-images img {
-    width: 100%;
     height: inherit;
     border-radius: 15px;
     box-shadow: 5px 1px 16px 4px rgba(0,0,0,0.54);
@@ -417,6 +361,155 @@ footer h1 {
 .time-selector img:hover {
     background-color: purple;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1536px) {
+    .building-images img {
+        width: 100%;
+        height: inherit;
+        border-radius: 15px;
+        box-shadow: 5px 1px 16px 4px rgba(0,0,0,0.54);
+    }
+
+    .reservetionText span {
+        width: 100%;
+        margin-right: 25px;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        width: 100%;
+    }
+
+    .building-images {
+        margin: auto 10px;
+    }
+}
+
+@media screen and (max-width: 776px) {
+    
+    body {
+        overflow-x: hidden;
+    }
+    
+    .nav-links{
+        position: absolute;
+        width: 100%;
+        right: 0px;
+        height: 83vh;
+        top: 8vh;
+        background-color: purple;
+        display: flex;
+        flex-direction: column;
+        font-size: 24px;
+        align-items: center;
+        justify-content: space-evenly;
+        transform: translateX(100%);
+        transition: transform .6s ease-in;
+    }
+    
+    .nav-links li {
+        opacity: 0;
+    }
+    
+    .menu-btn {
+        display: flex;
+    }
+    
+    .building-selection-wrapper {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+    .building-list {
+        margin: auto;
+        width: 100%;
+    }
+
+    .building-list ul {
+        margin: auto;
+        width: 100%;
+    }
+
+    .building-list ul li {
+        text-align: center;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .building-list-1 {
+        background-color: white;
+        border-radius: 0px;
+        border: none;
+        border-bottom: 1px purple solid;
+    }
+    .building-list-2 {
+        background-color: white;
+        border-radius: 0px;
+        border: none;
+    }
+
+    .building-list-2:hover {
+        background: white;
+        opacity: 50%;
+    }
+
+    .building-list-3 {
+        background-color: white;
+        border-radius: 0px;
+        border: none;
+    }
+    .building-list-4 {
+        background-color: white;
+        border-radius: 0px;
+        border: none;
+    }
+
+    .building-list-1-ractive {
+        border: none;
+    }
+
+    .building-list-2-responsive {
+        border-bottom: 1px purple solid;
+    }
+
+    .building-list-3-responsive {
+        border-bottom: 1px purple solid;
+    }
+
+    .building-list-4-responsive {
+        border-bottom: 1px purple solid;
+    }
+    
+    .building-list-1-rractive {
+        border-bottom: 1px purple solid;
+    }
+    
+}
+
+@keyframes navLinksFade {
+    from {
+        opacity: 0;
+        transform: translateX(25px);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+}
+
+
+.nav-active {
+    transform: translateX(0%);
 }
 
 
