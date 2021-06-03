@@ -6,7 +6,9 @@
 }
 
 body {
+    overflow-x: hidden;
     background-color: #fff;
+    
 }
 /* GLOBAL PROPERTIES - END */
 
@@ -363,6 +365,10 @@ footer h1 {
     cursor: pointer;
 }
 
+.icon-wrapper {
+    display: none;
+}
+
 @media screen and (max-width: 1536px) {
     .building-images img {
         width: 100%;
@@ -386,19 +392,32 @@ footer h1 {
     .building-images {
         margin: auto 10px;
     }
+
+    .building-selection-wrapper {
+        width: 90%;
+    }
+
+    .building-list {
+        width: 50%;
+    }
+
+    .reservetionText {
+        width: 30%;
+        padding-left: 30px;
+    }
+
+    .method-images {
+        width: 29%;
+    }
 }
 
 @media screen and (max-width: 776px) {
-    
-    body {
-        overflow-x: hidden;
-    }
     
     .nav-links{
         position: absolute;
         width: 100%;
         right: 0px;
-        height: 83vh;
+        height: 100vh;
         top: 8vh;
         background-color: purple;
         display: flex;
@@ -413,18 +432,36 @@ footer h1 {
     .nav-links li {
         opacity: 0;
     }
+
+    .nav-links li:hover {
+        color: #ACADBC;
+    }
     
     .menu-btn {
         display: flex;
     }
-    
-    .building-selection-wrapper {
+
+    .building_method_images-container {
+        width: 100%;
+    }
+
+    .building_method_images-wraper {
         width: 90%;
         margin: auto;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
     }
+
+    .method-images {
+        width: 80%;
+        margin: auto;
+        min-height: 310px;
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+        justify-content: space-between;
+    }
+
     
     .building-list {
         margin: auto;
@@ -461,6 +498,16 @@ footer h1 {
         opacity: 50%;
     }
 
+    .building-list-3:hover {
+        background: white;
+        opacity: 50%;
+    }
+
+    .building-list-4:hover {
+        background: white;
+        opacity: 50%;
+    }
+
     .building-list-3 {
         background-color: white;
         border-radius: 0px;
@@ -491,8 +538,138 @@ footer h1 {
     .building-list-1-rractive {
         border-bottom: 1px purple solid;
     }
+
+    .reservetionText {
+        padding-right: 50px;
+        position: absolute;
+        z-index: -1;
+        bottom: 280px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .building-images {
+        width: 100%;
+    }
+
+    .room-selector {
+        width: 100%;
+    }
+
+    .time-selector {
+        width: 100%;
+    }
+
+    .room-selector img {
+        width: 95%;
+    }
+
+    .time-selector img {
+        width: 95%;
+    }
+
+    .icon-wrapper {
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding-bottom: 50px;
+    }
+
+    .reservetionText {
+        position: absolute;
+        bottom: 315px;
+    }
+
+    .icon-wrapper {
+        width: 100%;
+        margin: auto;
+        padding-bottom: 100px;
+    }
+
+    .icon-next {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        background-color: #fff;
+        border: 1px #fff solid;
+        border-radius: 50%;
+        box-shadow: 4px 1px 20px 4px rgba(0,0,0,0.54);
+        transition: all 1s ease;
+    }
+
+    .icon-next i {
+        margin-top: 30px;
+    }
+
+    .icon-wrapper .icon-next:hover {
+        background-color: purple;
+        border: 1px purple solid;
+        color: #fff;
+        cursor: pointer;
+    }
     
 }
+
+@media screen and (max-width: 714px) {
+ .reservetionText {
+     position: absolute;
+     bottom: 350px;
+ }   
+}
+
+@media screen and (max-width: 630px) {
+ .reservetionText {
+     position: absolute;
+     bottom: 365px;
+ }   
+}
+
+@media screen and (max-width: 600px) {
+    .reservetionText {
+        position: absolute;
+        bottom: 400px;
+    }   
+   }
+
+@media screen and (max-width: 510px) {
+
+    .reservetionText {
+        padding-right: 80px;
+        position: absolute;
+        z-index: -1;
+        left: 35px;
+        bottom: 440px;
+        width: 100%;
+        text-align: center;
+    }
+    .icon-wrapper {
+        width: 100%;
+        height: 100px;
+        margin: auto;
+    }
+
+    .icon-next {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        background-color: #fff;
+        border: 1px #fff solid;
+        border-radius: 50%;
+        box-shadow: 4px 1px 20px 4px rgba(0,0,0,0.54);
+        transition: all 1s ease;
+    }
+
+    .icon-next i {
+        margin-top: 30px;
+    }
+}
+
 
 @keyframes navLinksFade {
     from {
@@ -511,7 +688,6 @@ footer h1 {
 .nav-active {
     transform: translateX(0%);
 }
-
 
 
 /* BUILDINGS/METHOD IMAGES SECTION - END */
