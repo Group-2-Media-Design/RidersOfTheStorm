@@ -25,10 +25,7 @@ body {
     width: 27%;
     display: flex;
     flex-direction: column;
-    
     float: right;
-    
-
 }
 .login-content {
     display: flex;
@@ -36,9 +33,9 @@ body {
     flex-direction: column;
     width: 80%;
     justify-content: space-between;
-    height: 25vh;
+    height: 20vh;
     align-items: center;
-    margin-top: 15%;
+    margin-top: 10%;
 }
 .fontys-logo {
     margin-left: 10%;
@@ -46,19 +43,26 @@ body {
 }
 
 .sign-text {
-    padding: 8px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 80%;
+}
+
+.submit-button {
+    width: 75%;
+    margin: auto;
 }
 
 .submit-button input {
     padding: 8px 18px;
-    background: rgb(38, 114, 236);
+    background: #663366;
     text-decoration: none;
     border: none;
     color: white;
 }
 
 .submit-button input:hover {
-    opacity: 25%;
+    opacity: 50%;
     cursor: pointer;
 }
 
@@ -70,6 +74,7 @@ body {
     border: 1px solid #6b6b6b;
     margin-bottom: 5px;
 }
+
 .passwordenter {
     width: 200%;
     padding: 8px;
@@ -87,8 +92,9 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 100%;
+    width: 85%;
     padding-top: 10px;
+    font-size: 15px;
 }
 /* LOGIN - END */
 
@@ -752,6 +758,11 @@ footer h1 {
 
 
 @media screen and (max-width: 1024px) {
+
+    body {
+        overflow-y: hidden;
+    }
+
     .nav-links {
         width: 100%;
         z-index: 1;
@@ -777,6 +788,11 @@ footer h1 {
     .method-images {
         width: 29%;
     }
+
+    .room-selector:focus {
+        background-color: #663366;
+    }
+
 }
 
 @media screen and (max-width: 776px) {
@@ -1065,6 +1081,15 @@ footer h1 {
     .icon-next i {
         margin-top: 30px;
     }
+
+    /* LOGIN - START */
+
+    .login-wrapper {
+        width: 100%;
+    }
+
+    /* LOGIN - END */
+
 }
 
 

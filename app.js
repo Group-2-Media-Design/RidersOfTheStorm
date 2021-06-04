@@ -118,25 +118,26 @@ floor1.addEventListener('click', () => {
     buildingList_2.classList.remove('building-list-2-active');
 
     img.src = '../img/groundfloor.png';
-})
+});
 floor2.addEventListener('click', () => {
     buildingList_2.classList.add('building-list-2-active');
     buildingList_1.classList.add('building-list-1-nactive');
     buildingList_3.classList.remove('building-list-3-active');
     buildingList_4.classList.remove('building-list-4-active');
     img.src = '../img/firstfloor.png';
-})
+});
 floor3.addEventListener('click', () => {
     buildingList_3.classList.add('building-list-3-active');
     buildingList_1.classList.add('building-list-1-nactive');
     buildingList_2.classList.remove('building-list-2-active');
     buildingList_4.classList.remove('building-list-4-active');
     img.src = '../img/secondfloor.png';
-})
+});
 floor4.addEventListener('click', () => {
     buildingList_4.classList.add('building-list-4-active');
     buildingList_1.classList.add('building-list-1-nactive');
     buildingList_3.classList.remove('building-list-3-active');
     buildingList_2.classList.remove('building-list-2-active');
     img.src = '../img/forthfloor.png';
-})
+});
+
