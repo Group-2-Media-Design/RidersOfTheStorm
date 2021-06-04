@@ -450,6 +450,292 @@ footer h1 {
     display: none;
 }
 
+
+/* Overview Page */
+.thankyou1-container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-top: 10%;
+  }
+  .thankyou1-container > div > p {
+      font-size: 30px; 
+      margin-left: -10%;
+  }
+  .vl {
+    border-left: 3px solid rgb(0, 0, 0);
+    height: 750px;
+    margin-left: -20%;
+  }
+.page-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+.backhomebutton {
+    background-color:rgb(128, 0, 128);
+  border: none;
+  color: white;
+  padding: 1% 1%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  width: 30%;
+  border-radius: 20px ;
+}
+.overview-container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+ /* Time Selector Page */
+ .datetime-container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    margin-left: 4%;
+    
+  }
+ .floorplanners-container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+/* Calendar Page */
+[data-app='calendar-app'] {
+  margin: 20px;
+  width: 170%;
+}
+
+.calendar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 120%;
+  
+  
+}
+.calendar-nav > h2 {
+  color: rgb(128, 0, 128);
+}
+.calendar-nav * {
+  
+  text-align: center;
+}
+.calendar-nav button {
+  height: 50px;
+  background: transparent;
+  border: none;
+  color: transparent;
+}
+
+#prev-month {
+    margin-left: 60%;
+}
+#prev-month::before {
+  content: '<';
+  color: black;
+  font-size: 40px;
+}
+
+#next-month::after {
+  content: '>';
+  color: black;
+  font-size: 40px;
+}
+
+.calendar-grid {
+  display:grid;
+  border-radius: 10px;
+  padding: 10px;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+  max-width: 100%;
+  box-shadow: 5px 6px 15px -1px rgb(0, 0, 0,0.44);
+  
+}
+
+.calendar-grid  div {
+  padding: 10px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.calendar-grid  div:hover {
+  border: 1px solid rgb(128, 0, 128);
+  border-radius: 0%;
+  background-color: rgb(128, 0, 128);
+  color:white;
+  }
+
+.calendar-grid  div:active {
+  border: 1px solid rgb(128, 0, 128);
+  border-radius: 0%;
+  background-color: rgb(128, 0, 128);
+  color:white;
+  }
+
+
+  .calendar-active {
+      background-color: black;
+  }
+
+.prev, .next {
+  color: #bbb;
+}
+
+.today {
+  border: 1px solid rgb(128, 0, 128);
+  border-radius: 0%;
+  background-color: rgb(128, 0, 128);
+  color:white;
+  font-weight:bold;
+}
+/*Choose Subjects*/
+:root {
+    --select-border: rgb(128, 0, 128);
+    --select-focus: rgb(128,0,128);
+    /* --select-arrow: var(--select-border); */
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .timeselector {
+      margin-left: 50%;
+      width: 100%;
+  }
+  .timeselector >label {
+      font-size: 20px;
+      color: rgb(128, 0, 128);
+      margin-left: 14%;
+  }
+  #standard-select {
+      margin-top: 2%;
+  width: 80%;
+  background: rgb(255, 255, 255);
+  color: #000;
+  border: 3px solid white;
+  border-radius: 4px;
+  box-shadow: 5px 6px 15px -1px rgb(0, 0, 0,0.44);
+  outline-color: rgb(128, 0, 128);
+}
+  
+  .select::after {
+    content: "";
+    width: 0.8em;
+    height: 0.5em;
+    background-color: var(--select-arrow);
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+    margin-left: -4.5%;
+  }
+  .floorplans-container {
+      border: 1px solid black;
+      display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    position: relative;
+    border: none;
+  }
+  .floorplans-container > img {
+      width: 60%;
+      margin-left: 20%;
+      margin-top: 5%;
+      
+  }.floorplans-container > img {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 5%;
+    
+}
+.floorplans-container > p {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+  .vl2 {
+    border-left: 3px solid rgb(0, 0, 0);
+    height: 1400px;
+    position: relative;
+    margin-left: 20%;
+  }
+  .lastpic {
+      padding-bottom: 100px;
+  }
+  .makereservationbutton {
+  background-color:rgb(128, 0, 128);
+  border: none;
+  color: white;
+  padding: 1% 1%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  width: 78%;
+  border-radius: 20px ;
+  margin-left: 50%;
+  box-shadow: 5px 6px 15px -1px rgb(0, 0, 0,0.44);
+}
+
+.timeselector {
+    margin-left: 5%;
+}
+.timeselector >label {
+  font-size: 20px;
+  color: rgb(128, 0, 128);
+}
+.select {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: var(--select-arrow);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  margin-left: -4.5%;
+}
+
+.cards {
+  position: absolute;
+  box-sizing: border-box;
+  z-index: -1;
+  max-width: 100%;
+  display: grid;
+  grid-gap: 1rem;
+  margin-top: 5rem;
+}
+
+.card1 {
+  width: 80%;
+  margin: auto;
+  justify-content: center;
+}
+.card2 {
+  justify-self: center;
+}
+@media screen and (min-width: 1500px) {
+.cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+.makereservationbutton {
+  background-color:rgb(128, 0, 128);
+  border: none;
+  color: white;
+  padding: 1% 1%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  width: 78%;
+  border-radius: 20px ;
+  margin-left: 4%;
+}
+
 @media screen and (max-width: 1536px) {
     .building-images img {
         width: 100%;
@@ -468,6 +754,7 @@ footer h1 {
 @media screen and (max-width: 1024px) {
     .nav-links {
         width: 100%;
+        z-index: 1;
     }
 
     .building-images {
@@ -692,6 +979,35 @@ footer h1 {
         color: #fff;
         cursor: pointer;
     }
+    .floorplanners-container {
+        flex-direction: column;
+    }
+    .vl2 {
+        display: hide;
+        height: 0px;
+    }
+    [data-app='calendar-app'] {
+        margin: 20px;
+        width: 85%;
+      }
+      .calendar-nav {
+        
+        margin-left: 0%;
+        
+      }
+      #prev-month {
+          margin-left: 0%;
+      }
+      .timeselector {
+        width: 80%;
+        margin-left: 17%;
+      }
+      .timeselector > label {
+          margin-left: 8%;
+      }
+      .makereservationbutton {
+          margin-left: 10%;
+      }
     
 }
 
@@ -764,7 +1080,6 @@ footer h1 {
     }
 
 }
-
 
 .nav-active {
     transform: translateX(0%);

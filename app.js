@@ -94,3 +94,49 @@ const buildingsAnimation = () => {
 }
 
 buildingsAnimation();
+
+
+
+
+let floor1 = document.getElementById('floor1');
+let floor2 = document.getElementById('floor2');
+let floor3 = document.getElementById('floor3');
+let floor4 = document.getElementById('floor4');
+
+let img = document.getElementById('img');
+
+    const buildingList_1 = document.querySelector('.building-list-1');
+    const buildingList_2 = document.querySelector('.building-list-2');
+    const buildingList_3 = document.querySelector('.building-list-3');
+    const buildingList_4 = document.querySelector('.building-list-4');
+    const campusOverview = document.getElementById('campus-overview-image');
+
+floor1.addEventListener('click', () => {
+    buildingList_1.classList.remove('building-list-1-nactive');
+    buildingList_4.classList.remove('building-list-4-active');
+    buildingList_3.classList.remove('building-list-3-active');
+    buildingList_2.classList.remove('building-list-2-active');
+
+    img.src = '../img/groundfloor.png';
+})
+floor2.addEventListener('click', () => {
+    buildingList_2.classList.add('building-list-2-active');
+    buildingList_1.classList.add('building-list-1-nactive');
+    buildingList_3.classList.remove('building-list-3-active');
+    buildingList_4.classList.remove('building-list-4-active');
+    img.src = '../img/firstfloor.png';
+})
+floor3.addEventListener('click', () => {
+    buildingList_3.classList.add('building-list-3-active');
+    buildingList_1.classList.add('building-list-1-nactive');
+    buildingList_2.classList.remove('building-list-2-active');
+    buildingList_4.classList.remove('building-list-4-active');
+    img.src = '../img/secondfloor.png';
+})
+floor4.addEventListener('click', () => {
+    buildingList_4.classList.add('building-list-4-active');
+    buildingList_1.classList.add('building-list-1-nactive');
+    buildingList_3.classList.remove('building-list-3-active');
+    buildingList_2.classList.remove('building-list-2-active');
+    img.src = '../img/forthfloor.png';
+})

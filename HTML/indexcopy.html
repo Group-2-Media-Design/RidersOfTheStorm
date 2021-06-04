@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    
+    <title>Document</title>
+</head>
+<body>
+    <!-- NAVBAR CONTAINER - START -->
+    <div class="navbar-container">
+        <!-- NAVBAR WRAPPER - START -->
+        <div class="navbar-wrapper">
+            <!-- LOGO -->
+            <div class="logo-menu">
+                <img class="logo" src="../img/studyspaceswhiteicon.png" alt="Workspace+ Logo">
+            </div>
+            <!-- LINKS -->
+            <div class="nav-list">
+                <ul class="nav-links"> 
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Timetable</a></li>
+                    <li><a href="#">Room Selector</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- BURGER MENU -->
+            <div class="menu-btn">
+                <div class="menu-btn_burger"></div>
+                <div class="menu-btn_burger_2"></div>
+                <div class="menu-btn_burger_3"></div>
+            </div>
+        </div>
+        <!-- NAVBAR WRAPPER - END -->
+    </div>
+    <!-- NAVBAR CONTAINER - END -->
+    <div class="floorplanners-container">
+    <div class="datetime-container">
+    <div data-app="calendar-app"></div>
+    <br>
+    
+<div class="timeselector">
+    <label for="standard-select">Please select a time slot</label>
+    <br>
+    <div class="select">
+      <select id="standard-select">
+        <option value="Option 1">9:00</option>
+        <option value="Option 2">9:30</option>
+        <option value="Option 3">10:00</option>
+        <option value="Option 4">10:30</option>
+        <option value="Option 5">11:00</option>
+        <option value="Option 6">11:30</option>
+        <option value="Option 7">12:00</option>
+        <option value="Option 8">12:30</option>
+        <option value="Option 9">13:00</option>
+        <option value="Option length">Other timeslots are currently not available</option>
+      </select>
+      <span class="focus"></span>
+    </div>
+</div>
+<br>
+<br>
+<div class="timeselector">
+    <label for="standard-select">Number of attendees</label>
+    <br>
+    <div class="select">
+      <select id="standard-select">
+        <option value="Option 1">1</option>
+        <option value="Option 2">2</option>
+        <option value="Option 3">3</option>
+        <option value="Option 4">4</option>
+        <option value="Option 5">5</option>
+        <option value="Option 6">6</option>
+        <option value="Option 7">7</option>
+        <option value="Option 8">8</option>
+        <option value="Option 9">9</option>
+        <option value="Option 10">10</option>
+        <option value="Option length">Other timeslots are currently not available</option>
+      </select>
+      <span class="focus"></span>
+    </div>
+</div>
+<br>
+<br>
+<div class="timeselector">
+    <label for="standard-select">Select an available room</label>
+    <br>
+    <div class="select">
+      <select id="standard-select">
+        <option value="Option 1">2.14</option>
+        <option value="Option 2" disabled>2.40</option>
+        <option value="Option 3">3.60</option>
+        <option value="Option 4">4.10</option>
+        <option value="Option 5">2.75</option>
+        <option value="Option 6"disabled>1.60</option>
+        <option value="Option 7">2.30</option>
+        <option value="Option 8">1.30</option>
+        <option value="Option 9">4.20</option>
+        <option value="Option 10">1.40</option>
+        <option value="Option length">Other timeslots are currently not available</option>
+      </select>
+      <span class="focus"></span>
+    </div>
+</div>
+<br>
+<br>
+<input type="button" class="makereservationbutton" value="Make Reservation">
+</div>
+<div class="vl2"></div>
+<div class="floorplans-container">
+    <p>Ground floor</p>
+<img src="../img/groundfloorplan.png" alt="">
+<p>First floor</p>
+<img src="../img/firstfloorplan.png" alt="">
+<p>Second Floor</p>
+<img src="../img/secondfloorplan.png" alt="">
+<p>Forth floor</p>
+<img class="lastpic" src="../img/forthfloorplan.png" alt="">
+</div>
+</div>
+
+<br>
+<br>
+
+    <!-- FOOTER -->
+    <footer>
+        <h1>Logged in as: 432556@student.fontys.nl</h1>
+    </footer> 
+
+    <script src="../calendar.js"></script>
+    <script src="../app.js"></script>
+</body>
+</html>
