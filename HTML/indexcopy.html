@@ -20,10 +20,10 @@
             <!-- LINKS -->
             <div class="nav-list">
                 <ul class="nav-links"> 
-                    <li><a href="#">Home</a></li>
+                    <li><a href="../homepage.html">Home</a></li>
                     <li><a href="#">Timetable</a></li>
                     <li><a href="#">Room Selector</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="./thankyou.html">Information</a></li>
                 </ul>
             </div>
             <!-- BURGER MENU -->
@@ -35,26 +35,40 @@
         </div>
         <!-- NAVBAR WRAPPER - END -->
     </div>
+    <form id="addForm">
     <!-- NAVBAR CONTAINER - END -->
     <div class="floorplanners-container">
     <div class="datetime-container">
-    <div data-app="calendar-app"></div>
+        <div class="pickdate"><label for="date-selection">Pick a date</label></div>
+        <div class="date-picker">
+            <div class="selected-date"></div>
+    
+            <div class="dates">
+                <div class="month">
+                    <div class="arrows prev-mth">&lt;</div>
+                    <div class="mth"></div>
+                    <div class="arrows next-mth">&gt;</div>
+                </div>
+    
+                <div class="days"></div>
+            </div>
+        </div>
     <br>
     
 <div class="timeselector">
     <label for="standard-select">Please select a time slot</label>
     <br>
     <div class="select">
-      <select id="standard-select">
-        <option value="Option 1">9:00</option>
-        <option value="Option 2">9:30</option>
-        <option value="Option 3">10:00</option>
-        <option value="Option 4">10:30</option>
-        <option value="Option 5">11:00</option>
-        <option value="Option 6">11:30</option>
-        <option value="Option 7">12:00</option>
-        <option value="Option 8">12:30</option>
-        <option value="Option 9">13:00</option>
+      <select id="standard-select" class="time-selected">
+        <option value="9:00">9:00</option>
+        <option value="9:30">9:30</option>
+        <option value="10:00">10:00</option>
+        <option value="10:30">10:30</option>
+        <option value="11:00">11:00</option>
+        <option value="11:30">11:30</option>
+        <option value="12:00">12:00</option>
+        <option value="12:30">12:30</option>
+        <option value="13:00">13:00</option>
         <option value="Option length">Other timeslots are currently not available</option>
       </select>
       <span class="focus"></span>
@@ -66,17 +80,13 @@
     <label for="standard-select">Number of attendees</label>
     <br>
     <div class="select">
-      <select id="standard-select">
-        <option value="Option 1">1</option>
-        <option value="Option 2">2</option>
-        <option value="Option 3">3</option>
-        <option value="Option 4">4</option>
-        <option value="Option 5">5</option>
-        <option value="Option 6">6</option>
-        <option value="Option 7">7</option>
-        <option value="Option 8">8</option>
-        <option value="Option 9">9</option>
-        <option value="Option 10">10</option>
+      <select id="standard-select" class="people-standard">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="5">6</option>
         <option value="Option length">Other timeslots are currently not available</option>
       </select>
       <span class="focus"></span>
@@ -88,26 +98,16 @@
     <label for="standard-select">Select an available room</label>
     <br>
     <div class="select">
-      <select id="standard-select">
-        <option value="Option 1">2.14</option>
-        <option value="Option 2" disabled>2.40</option>
-        <option value="Option 3">3.60</option>
-        <option value="Option 4">4.10</option>
-        <option value="Option 5">2.75</option>
-        <option value="Option 6"disabled>1.60</option>
-        <option value="Option 7">2.30</option>
-        <option value="Option 8">1.30</option>
-        <option value="Option 9">4.20</option>
-        <option value="Option 10">1.40</option>
-        <option value="Option length">Other timeslots are currently not available</option>
+      <select id="standard-select" class="room_standard">
       </select>
       <span class="focus"></span>
     </div>
 </div>
 <br>
 <br>
-<input type="button" class="makereservationbutton" value="Make Reservation">
+<input  id="calendarButton" type="button" class="makereservationbutton timing" value="Make Reservation">
 </div>
+</form>
 <div class="vl2"></div>
 <div class="floorplans-container">
     <p>Ground floor</p>
@@ -129,7 +129,42 @@
         <h1>Logged in as: 432556@student.fontys.nl</h1>
     </footer> 
 
-    <script src="../calendar.js"></script>
-    <script src="../app.js"></script>
+
+
+    
+<!-- SCRIPTS -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyANtoZIhTVP6Ixp0oQ0geRD0b5ddPyv6Hw",
+    authDomain: "riders-of-the-storm-work-c0447.firebaseapp.com",
+    projectId: "riders-of-the-storm-work-c0447",
+    storageBucket: "riders-of-the-storm-work-c0447.appspot.com",
+    messagingSenderId: "460821899027",
+    appId: "1:460821899027:web:7e206404ff5587fc58dce6",
+    measurementId: "G-2P34N7004Q"
+  };
+  
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+</script>
+<script src="../calendar.js"></script>
+<script src="../app.js"></script>
+<script src="../check.js"></script>
+<!-- <script src="../auth.js"></script> -->
+<!-- <script src="../auth2.js"></script> -->
 </body>
 </html>

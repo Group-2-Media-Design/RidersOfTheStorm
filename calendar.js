@@ -1,89 +1,200 @@
-// Months array
-var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-// Days of the Week
-var daysOfWeek = ['S','M','T','W','TH','F','SA'];
-var gridsize = 42; //Total number of date boxes in the grid
+const date_picker_element = document.querySelector('.date-picker');
+const selected_date_element = document.querySelector('.date-picker .selected-date');
+const dates_element = document.querySelector('.date-picker .dates');
+const mth_element = document.querySelector('.date-picker .dates .month .mth');
+const next_mth_element = document.querySelector('.date-picker .dates .month .next-mth');
+const prev_mth_element = document.querySelector('.date-picker .dates .month .prev-mth');
+const days_element = document.querySelector('.date-picker .dates .days');
 
-// Default the state to current month and year.
-var state = {
-  month: new Date().getMonth(),
-  year: new Date().getFullYear(),
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+let date = new Date();
+let day = date.getDate();
+let month = date.getMonth();
+let year = date.getFullYear();
+
+let selectedDate = date;
+let selectedDay = day;
+let selectedMonth = month;
+let selectedYear = year;
+
+mth_element.textContent = months[month] + ' ' + year;
+
+selected_date_element.textContent = formatDate(date);
+selected_date_element.dataset.value = selectedDate;
+
+populateDates();
+
+// EVENT LISTENERS
+date_picker_element.addEventListener('click', toggleDatePicker);
+next_mth_element.addEventListener('click', goToNextMonth);
+prev_mth_element.addEventListener('click', goToPrevMonth);
+
+// FUNCTIONS
+function toggleDatePicker (e) {
+	if (!checkEventPathForClass(e.path, 'dates')) {
+		dates_element.classList.toggle('active');
+	}
 }
 
-// The following function builds an array of objects with dates to be displayed in the grid
-function datesForGrid(year, month) {
-  // days array holds all the days to be populated in the grid
-  var dates = [];
-  // Day on which the month starts
-  var firstDay = new Date(year, month).getDay(); 
-  // Total number of days in the month
-  var totalDaysInMonth = new Date(year, month + 1, 0).getDate();
-  // Total number of days in the previous month
-  var totalDaysInPrevMonth = new Date(year, month, 0).getDate();
-  
-  // Days from prev month to show in the grid
-  for(var i = 1; i <= firstDay; i++) {
-    var prevMonthDate = totalDaysInPrevMonth - firstDay + i;
-    var key = new Date(state.year, state.month -1, prevMonthDate).toLocaleString();    
-    dates.push({key: key, date: prevMonthDate, monthClass:'prev'});
-  }
-  // Days of the current month to show in the grid
-  var today = new Date();
-  for(var i = 1; i <= totalDaysInMonth; i++) {
-    var key = new Date(state.year, state.month, i).toLocaleString();
-    if(i === today.getDate() && state.month === today.getMonth() && state.year === today.getFullYear()) {
-      dates.push({key: key, date: i, monthClass: 'current', todayClass: 'today'})
-    } else{ 
-      dates.push({key: key, date: i, monthClass: 'current'});
-    }
-  }
-  
-  // If there is space left over in the grid, then show the dates for the next month
-  if(dates.length < gridsize) {
-    var count = gridsize - dates.length;
-    for(var i = 1; i <= count; i++) {
-      var key = new Date(state.year, state.month + 1, i).toLocaleString();
-      dates.push({key: key, date: i, monthClass:'next'});
-    }
-  }
-  return dates;
+function goToNextMonth (e) {
+	month++;
+	if (month > 11) {
+		month = 0;
+		year++;
+	}
+	mth_element.textContent = months[month] + ' ' + year;
+	populateDates();
 }
 
-function render() {  
-  var calendarApp = document.querySelector('[data-app=calendar-app]');
-  // Building the calendar app HTML from the data
-  calendarApp.innerHTML = `
-      <div class="calendar-nav">
-        
-        <h2>${months[state.month]} ${state.year}</h2>
-        <button id="prev-month">Previous</button>
-        <button id="next-month">Next</button>
-      </div>
-      <div class='calendar-grid'>
-        ${ daysOfWeek.map(day => `<div>${day}</div>` ).join('') }
-        ${ datesForGrid(state.year, state.month).map(date => `<div id="${date.key}" class="${date.monthClass} ${date.todayClass ? date.todayClass : ''}">${date.date}</div>`).join('') }
-      </div>
-  `;
-  
+function goToPrevMonth (e) {
+	month--;
+	if (month < 0) {
+		month = 11;
+		year--;
+	}
+	mth_element.textContent = months[month] + ' ' + year;
+	populateDates();
 }
 
+function populateDates (e) {
+	days_element.innerHTML = '';
+	let amount_days = 31;
 
-function showCalendar(prevNextIndicator) {
-  var date = new Date(state.year, state.month + prevNextIndicator);
-  //Update the state
-  state.year = date.getFullYear();
-  state.month = date.getMonth();  
-  render();
+	if (month == 1) {
+		amount_days = 28;
+	}
+
+	for (let i = 0; i < amount_days; i++) {
+		const day_element = document.createElement('div');
+		day_element.classList.add('day');
+		day_element.textContent = i + 1;
+
+		if (selectedDay == (i + 1) && selectedYear == year && selectedMonth == month) {
+			day_element.classList.add('selected');
+      day_element.setAttribute('id', 'picked');
+		}
+
+		day_element.addEventListener('click', function () {
+			selectedDate = new Date(year + '-' + (month + 1) + '-' + (i + 1));
+			selectedDay = (i + 1);
+			selectedMonth = month;
+			selectedYear = year;
+
+			selected_date_element.textContent = formatDate(selectedDate);
+			selected_date_element.dataset.value = selectedDate;
+
+			populateDates();
+		});
+
+		days_element.appendChild(day_element);
+	}
 }
 
-// Show the current month by default
-showCalendar(0);
+// HELPER FUNCTIONS
+function checkEventPathForClass (path, selector) {
+	for (let i = 0; i < path.length; i++) {
+		if (path[i].classList && path[i].classList.contains(selector)) {
+			return true;
+		}
+	}
+	
+	return false;
+}
+function formatDate (d) {
+	let day = d.getDate();
+	if (day < 10) {
+		day = '0' + day;
+	}
 
-document.addEventListener('click', function(ev) {
-  if(ev.target.id === 'prev-month') {
-    showCalendar(-1);
-  }
-  if(ev.target.id === 'next-month') {
-    showCalendar(1);
+	let month = d.getMonth() + 1;
+	if (month < 10) {
+		month = '0' + month;
+	}
+
+	let year = d.getFullYear();
+
+	return day + ' / ' + month + ' / ' + year;
+}
+
+// Listen for auth status changes
+auth.onAuthStateChanged(user => {
+  if(user) {
+      db.collection('students').doc("szt6JeBvt0lln0Djn2hD").collection("Free").get().then(snapshot => {
+      setupGuides(snapshot.docs);
+      setupUI(user);
+  });
+  } else {
+      setupUI();
+      // setupUI()
+      setupGuides([])
+      console.log("User is logged out");
   }
 });
+
+const setupGuides = (data) => {
+  let html = "";
+  data.forEach(doc => {
+      const guide = doc.data()
+      console.log(guide);
+  })
+}
+const standard_select = document.querySelector('.room_standard');
+const sendingCalendarButton = document.getElementById('calendarButton');
+const addForm = document.getElementById('addForm');
+const people_standard = document.querySelector('.people-standard');
+const time_selected = document.querySelector('.time-selected');
+const day_selected = document.getElementById('picked');
+const month_selected = document.querySelector('.mth')
+// const room_selected = standard_select.value;
+const selected_date = document.querySelector('.selected-date');
+// const option = document.createElement('option');
+const finalDate = selected_date.innerHTML;
+
+// db.collection('students').doc("szt6JeBvt0lln0Djn2hD").collection("Free").doc("dJNtCidWoFivGGdbS9q1").get().then(doc => {
+//   var array = doc.data().room;
+//   array.forEach(item => {
+//     var option = document.createElement('option');
+//    option.textContent = item;
+//    standard_select.appendChild(option);
+//    console.log(item);
+//    if(standard_select != "") {
+//     sendingCalendarButton.addEventListener('click', (e) => {
+//       e.preventDefault()
+//       db.collection('students').doc("szt6JeBvt0lln0Djn2hD").collection("Occupied").add({
+//         room: option.textContent,
+//       });
+//     });
+//    }
+//   })
+// })
+
+function test() {
+  db.collection('students').doc("szt6JeBvt0lln0Djn2hD").collection("Free").doc("dJNtCidWoFivGGdbS9q1").get().then(doc => {
+    var array = doc.data().room;
+      array.forEach(item => {
+        const option = document.createElement('option');
+       option.textContent = item;
+       standard_select.appendChild(option);
+       return standard_select
+      })
+  })
+}
+
+const setupUI = (user) => {
+  if (user) {
+    test();
+      if(standard_select != "") {
+       sendingCalendarButton.addEventListener('click', (e) => {
+         e.preventDefault()
+         db.collection('students').doc("szt6JeBvt0lln0Djn2hD").collection("Occupied").add({
+          //  room: option.textContent,
+           people: people_standard.value,
+           time: time_selected.value,
+           date: finalDate,
+           room: standard_select.value,
+         })
+       })
+      }
+    }
+  }

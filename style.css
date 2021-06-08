@@ -510,96 +510,103 @@ footer h1 {
     flex-direction: row;
 }
 /* Calendar Page */
-[data-app='calendar-app'] {
-  margin: 20px;
-  width: 170%;
-}
-
-.calendar-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 120%;
-  
-  
-}
-.calendar-nav > h2 {
-  color: rgb(128, 0, 128);
-}
-.calendar-nav * {
-  
-  text-align: center;
-}
-.calendar-nav button {
-  height: 50px;
-  background: transparent;
-  border: none;
-  color: transparent;
-}
-
-#prev-month {
-    margin-left: 60%;
-}
-#prev-month::before {
-  content: '<';
-  color: black;
-  font-size: 40px;
-}
-
-#next-month::after {
-  content: '>';
-  color: black;
-  font-size: 40px;
-}
-
-.calendar-grid {
-  display:grid;
-  border-radius: 10px;
-  padding: 10px;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 4px;
-  text-align: center;
-  max-width: 100%;
-  box-shadow: 5px 6px 15px -1px rgb(0, 0, 0,0.44);
-  
-}
-
-.calendar-grid  div {
-  padding: 10px;
-  margin: 0 auto;
-  cursor: pointer;
-}
-
-.calendar-grid  div:hover {
-  border: 1px solid rgb(128, 0, 128);
-  border-radius: 0%;
-  background-color: rgb(128, 0, 128);
-  color:white;
-  }
-
-.calendar-grid  div:active {
-  border: 1px solid rgb(128, 0, 128);
-  border-radius: 0%;
-  background-color: rgb(128, 0, 128);
-  color:white;
-  }
 
 
-  .calendar-active {
-      background-color: black;
-  }
-
-.prev, .next {
-  color: #bbb;
+.date-picker {
+	position: relative;
+	width: 200%;
+	height: 30px;
+	background-color: #FFF;
+    margin-left: 0%;
+	box-shadow: 5px 6px 15px -1px rgba(0, 0, 0, 0.44);
+    z-index: 1;
+	cursor: pointer;
+	user-select: none;
 }
 
-.today {
-  border: 1px solid rgb(128, 0, 128);
-  border-radius: 0%;
-  background-color: rgb(128, 0, 128);
-  color:white;
-  font-weight:bold;
+.date-picker:hover {
+	background-color: #F3F3F3;
 }
+
+.date-picker .selected-date {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	color: #313131;
+	font-size: 18px;
+}
+
+.date-picker .dates {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+
+	background-color: #FFF;
+}
+
+.date-picker .dates.active {
+	display: block;
+    box-shadow: 5px 6px 15px -1px rgba(0, 0, 0, 0.44);
+
+}
+
+.date-picker .dates .month {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 2px solid #EEE;
+}
+
+.date-picker .dates .month .arrows {
+	width: 35px;
+	height: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #313131;
+	font-size: 20px;
+}
+
+.date-picker .dates .month .arrows:hover {
+	background-color: #F3F3F3;
+}
+
+.date-picker .dates .month .arrows:active {
+	background-color: #00CA85;
+}
+
+.date-picker .dates .days {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	height: 200px;
+}
+.date-picker .dates .days .day { 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #313131;
+}
+.date-picker .dates .days .day.selected {
+	background-color: rgb(128, 0, 128);
+    color: rgb(255, 255, 255);
+}
+.pickdate {
+    font-size: 20px;
+      color: rgb(128, 0, 128);
+      margin-left: 85%;
+      width: 100%;
+      margin-top: 20%;
+      margin-bottom: 2%;
+}
+
+
+
 /*Choose Subjects*/
 :root {
     --select-border: rgb(128, 0, 128);
@@ -1090,6 +1097,115 @@ footer h1 {
 
     /* LOGIN - END */
 
+}
+
+.done{
+    border-right: 2px solid black;
+    height: 500px;
+    margin-left: 10%;
+    margin-top: 10%;
+    width: 50%;
+}
+.done img{
+    width: 50%;
+    height: auto;
+    margin-left: 10%;
+}
+.done div h4{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 5%;
+}
+.details img{
+    width: 40%;
+    height: auto;
+}
+.details{
+    padding: 1%;
+    margin-right: 25%;
+    margin-top: 10%;
+}
+.details div h3{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-left: 65%;
+    margin-top: -10%;
+    width: 100%;
+}
+#specific img{
+    width: 50%;
+    height: auto;
+}
+#specific div h4{
+    text-align: center;
+    padding: 1%;
+    margin-left: 5%;
+    margin-top: 20%;
+}
+#reservation{
+    margin-top: -5%;
+    padding-bottom: 7%;
+}
+#reservation, .details{
+    display: flex;
+}
+#specific div{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    padding-bottom: 10%;
+    margin-top: 10%;
+    margin-left: 70%;
+    width: 100%;
+}
+.details #location{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-top: 10%;
+}
+#location img{
+    width: 75%;
+    margin-left: 10%;
+}
+#homebtn{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: white;
+    background-color: purple;
+    padding: 1%;
+    padding-right: 15%;
+    padding-left: 15%;
+    border-radius: 20px;
+    margin-left: 10%;
+    transition: 0.3s all ease;
+}
+#homebtn:hover{
+    color: purple;
+    background-color: white;
+    border: 1px solid purple;
+}
+.BTN-home{
+    margin-top: 10%;
+}
+#homebtn2{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: purple;
+    background-color: white;
+    border: 1px solid purple;
+    padding: 1%;
+    padding-right: 15%;
+    padding-left: 15%;
+    border-radius: 20px;
+    margin-left: 10%;
+    transition: 0.3s all ease;
+}
+#homebtn2:hover{
+    color: white;
+    background-color: purple;
+}
+.BTN2-home{
+    display: none;
+    margin-top: 10%;
 }
 
 
