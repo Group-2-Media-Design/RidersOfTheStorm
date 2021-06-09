@@ -169,16 +169,14 @@ const finalDate = selected_date.innerHTML;
 //   })
 // })
 
+let array = "";
+let arrayTest = "";
 function test() {
   db.collection('students').doc("szt6JeBvt0lln0Djn2hD").collection("Free").doc("dJNtCidWoFivGGdbS9q1").get().then(doc => {
-    var array = doc.data().room;
-      array.forEach(item => {
-        const option = document.createElement('option');
-       option.textContent = item;
-       standard_select.appendChild(option);
-       return standard_select
-      })
-  })
+     array = doc.data().room;
+     arrayTest = Math.floor(Math.random() * array.length);
+    
+})
 }
 
 const setupUI = (user) => {
@@ -192,7 +190,7 @@ const setupUI = (user) => {
            people: people_standard.value,
            time: time_selected.value,
            date: finalDate,
-           room: `${standard_select.value}`,
+           room: array[arrayTest],
          })
        })
       }

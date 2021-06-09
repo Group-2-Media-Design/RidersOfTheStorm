@@ -3,6 +3,7 @@ const picked_floor = document.getElementById('picked-floor');
 const picked_room = document.getElementById('picked-room');
 const picked_date = document.getElementById('picked-date');
 
+
 const setupGuides = (data) => {
     let html = "";
     data.forEach(doc => {
@@ -28,6 +29,7 @@ const setupGuides = (data) => {
             picked_building.innerHTML = "R10";
             picked_floor.innerHTML =  "Second Floor";
             picked_room.innerHTML = doc.data().room;
-            picked_date.innerHTML = doc.data().date;
+            let finalTime = `${doc.data().date} ${doc.data().time}  Attandies:${doc.data().people}`
+            picked_date.innerHTML = finalTime;
         })
     })

@@ -121,6 +121,7 @@ body {
 .nav-list {
     width: 90%;
     margin: auto;
+    display: flex;
 }
 
 .nav-list .nav-links ul, li, a{
